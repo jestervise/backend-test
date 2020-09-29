@@ -30,12 +30,13 @@ public class BackendTestApplication {
 	@Bean
 	public CommandLineRunner demo(CommentDao commentDao, PostDao postDao,RestTemplate restTemplate) {
 		return (args) -> {
-//			CommentBean[] commentBeans=restTemplate.getForObject("https://jsonplaceholder.typicode.com/comments", CommentBean[].class);
-//			if(commentBeans!=null)
-//				commentDao.saveAll(Arrays.stream(commentBeans).collect(Collectors.toList()));
-//			PostBean[] postBeans=restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts", PostBean[].class);
-//			if(postBeans!=null)
-//				postDao.saveAll(Arrays.stream(postBeans).collect(Collectors.toList()));
+			CommentBean[] commentBeans=restTemplate.getForObject("https://jsonplaceholder.typicode.com/comments", CommentBean[].class);
+			if(commentBeans!=null)
+				commentDao.saveAll(Arrays.stream(commentBeans).collect(Collectors.toList()));
+			PostBean[] postBeans=restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts", PostBean[].class);
+			if(postBeans!=null)
+				postDao.saveAll(Arrays.stream(postBeans).collect(Collectors.toList()));
+
 		};
 	}
 }
