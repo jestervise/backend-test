@@ -23,4 +23,5 @@ public class CommentBean {
 
     @Column(length=2000)
     private String body;
+
 }

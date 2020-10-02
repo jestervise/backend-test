@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 public class CommentController {
     CommentService commentService;
 
+
     @Autowired
     CommentController(CommentService commentService){
         this.commentService = commentService;
@@ -24,6 +25,7 @@ public class CommentController {
 
     @PostMapping("/find-comment-by-params")
     public CommentBean[] findCommentByParams(@RequestBody(required = true) CommentModel commentModel){
+
         return commentService.findCommentByParams(commentModel);
     }
 
